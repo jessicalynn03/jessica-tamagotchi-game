@@ -19,3 +19,26 @@ footer {
 p {
     border: 5px solid maroon; 
 }
+
+p {
+    text-align: justify;
+    border: 1px solid maroon; 
+}
+footer {
+    text-align: center;
+}
+/* 
+#myImage {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    justify-content: center;
+} */
+
+
+img {
+    justify-content: center;
+}
+h2 {
+    text-align: center;
+}
