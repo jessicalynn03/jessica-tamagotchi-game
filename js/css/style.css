@@ -1,7 +1,10 @@
 h1 {
     text-align: center;
+    border: 1px solid maroon;
 }
-
+h2 {
+    text-align: center;
+}
 p {
     text-align: justify;
 }
@@ -17,5 +20,5 @@ footer {
 } */
 
 p {
-    border: 5px solid maroon; 
+    border: 1px solid maroon; 
 }
