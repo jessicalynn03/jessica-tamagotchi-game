@@ -6,8 +6,6 @@ const startButton = document.querySelector("#start")
 const restartButton = document.querySelector("#restart")
 const yourName = document.querySelector("#yourName")
 const ageEl = document.querySelector(".age")
-
-
 const feedBtn = document.querySelector("#feed")
 const playBtn = document.querySelector("#play")
 const sleepBtn = document.querySelector("#sleep")
@@ -62,7 +60,15 @@ let sleepInterval = setInterval(function(){
 let ageInterval = setInterval(function(){
 age++
 ageEl.innerText = "Age: " + age;
-}, 5000)
+}, 20000)
+
+
+// let stopInterval = clearInterval(function(){
+//     if(hungerNow === 10 || playNow === 10 || sleepNow === 10)
+//     clearInterval(hungerInterval);
+//     clearInterval(playInterval);
+//     clearInterval(sleepInterval);
+// } 
 
 
 
