@@ -1,4 +1,4 @@
-const timeH1 = document.querySelector("#timer")
+const countdownEl = document.querySelector("#countdown")
 const hungerEl = document.querySelector(".hunger")
 const tiredEl = document.querySelector(".tired")
 const boredEl = document.querySelector(".bored")
@@ -12,13 +12,18 @@ const feedBtn = document.querySelector("#feed")
 const playBtn = document.querySelector("#play")
 const sleepBtn = document.querySelector("#sleep")
 
-let time = 5; 
+
+let startingMinutes = 5;
+let time = startingMinutes * 60;
+const minutes = math.floor(time / 60);
+const seconds = time % 60;
 let name = ""
 
 let hungerNow = 0;
 let playNow = 0;
 let sleepNow = 0;
 let age = 0;
+
 
 const subFood = () => {
     if(hungerNow > 0){
@@ -62,10 +67,30 @@ let sleepInterval = setInterval(function(){
 let ageInterval = setInterval(function(){
 age++
 ageEl.innerText = "Age: " + age;
-}, 5000)
+}, 20000)
 
 
 
+const updateCountdown = () =>{
+    time--
+    countdownEl.innerText = `${minutes}: ${seconds}`;
+}
+
+
+
+
+
+// function updateCountdown(){
+//     const minutes = math.floor(time / 60);
+//     let seconds = time % 60;
+//     seconds = seconds < 5 ? "0" * seconds : seconds;
+//     countdownEl.innerText = `${minutes}: ${seconds}`;
+//     time--;
+// }
+// setInterval(updateCountdown, 1000)
+
+
+startButton.addEventListener("click", updateCountdown)
        
 
 
@@ -73,17 +98,13 @@ ageEl.innerText = "Age: " + age;
 
 
 
-// startButton.addEventListener("click", decreaseTime)
 feedBtn.addEventListener("click", subFood);
 playBtn.addEventListener("click", subPlay);
 sleepBtn.addEventListener("click", subSleep);
 
 
 
-// const decreaseTime = () => {
-//     time--
-//     timeH1.innerText = time;
-// }
+
 
 
 
