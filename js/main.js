@@ -174,6 +174,26 @@ const gameOver = () => {
     }
 }
 
+
+
+
+// pauseButton.addEventListener("click", stopCount)
+
+startButton.addEventListener("click", startCount);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // if(hungerNow >= 10 || playNow >= 10 || sleepNow >= 10) {
 //     clearInterval(hungerInterval);
 //     clearInterval(playInterval);
@@ -183,26 +203,6 @@ const gameOver = () => {
 //     playBtn.removeEventListener("click", subPlay);
 //     sleepBtn.removeEventListener("click", subSleep);
 // }
-
-
-
-// pauseButton.addEventListener("click", stopCount)
-
-startButton.addEventListener("click", startCount);
-       
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
