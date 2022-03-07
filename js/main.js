@@ -61,7 +61,7 @@ let sleepInterval = null;
 
 const ageCount = () =>{
     ageInterval = setInterval(function(){
-        if(age < 10) {
+        if(age <= 20) {
             age++
             ageEl.innerText = "Age: " + age;
         }
