@@ -57,3 +57,6 @@ input {
 #yourName {
     color: rgb(100, 52, 52);
 }
+#countdown {
+    font-size: 30px;
+}
