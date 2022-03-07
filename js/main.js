@@ -13,6 +13,7 @@ const petAlive = document.querySelector("#petAlive")
 const feedBtn = document.querySelector("#feed")
 const playBtn = document.querySelector("#play")
 const sleepBtn = document.querySelector("#sleep")
+const resetBtn = document.querySelector("#reset")
 
 
 // let startingMinutes = 5;
@@ -20,6 +21,9 @@ const sleepBtn = document.querySelector("#sleep")
 // const minutes = Math.floor(time / 60);
 // const seconds = time % 60;
 // let name = ""
+
+
+
 
 let hungerNow = 0;
 let playNow = 0;
@@ -159,6 +163,9 @@ const startCount = () =>{
 
 
 // The game ends when when the value of each variable reaches 10. 
+
+let petDieMsg = document.getElementById("pet-die-msg")
+
 const gameOver = () => {
     if(hungerNow >= 10) {
         clearInterval(hungerInterval);
@@ -168,6 +175,7 @@ const gameOver = () => {
         feedBtn.removeEventListener("click", subFood);
         playBtn.removeEventListener("click", subPlay);
         sleepBtn.removeEventListener("click", subSleep);
+        petDieMsg.innerText = `I died of hunger.`
     } else if(playNow >= 10) {
         clearInterval(hungerInterval);
         clearInterval(playInterval);
@@ -176,6 +184,7 @@ const gameOver = () => {
         feedBtn.removeEventListener("click", subFood);
         playBtn.removeEventListener("click", subPlay);
         sleepBtn.removeEventListener("click", subSleep);
+        petDieMsg.innerText = `I died of hunger.`
     } else if(sleepNow >= 10) {
         clearInterval(hungerInterval);
         clearInterval(playInterval);
@@ -184,10 +193,30 @@ const gameOver = () => {
         feedBtn.removeEventListener("click", subFood);
         playBtn.removeEventListener("click", subPlay);
         sleepBtn.removeEventListener("click", subSleep);
+        petDieMsg.innerText = `I died of hunger.`
     }
 }
 
+const resetGamePage = () => {
+    clearInterval(hungerInterval);
+    clearInterval(playInterval);
+    clearInterval(sleepInterval);
+    clearInterval(ageInterval);
+    hungerNow = 0;
+    playNow = 0;
+    sleepNow = 0;
+    age = 0;
+    hungerEl.innerText = `Hungry: ${hungerNow}`;
+    boredEl.innerText = `Bored: ${playNow}`;
+    tiredEl.innerText = `Tired: ${sleepNow}`;
+    ageEl.innerText = `Age: 0`;
+    feedBtn.removeEventListener("click", subFood);
+    playBtn.removeEventListener("click", subPlay);
+    sleepBtn.removeEventListener("click", subSleep);
+    petDieMsg.innerText = ``;
+}
 
+resetBtn.addEventListener("click", resetGamePage);
 
 
 // pauseButton.addEventListener("click", stopCount)
@@ -199,6 +228,16 @@ startButton.addEventListener("click", startCount);
 
 
 
+class Tamagotchipet{
+    constructor(name, hunger, tired, bored, age){
+        this.name = name;
+        this.hunger = hunger;
+        this.tired = tired;
+        this.bored = bored;
+        this.age = age;
+    }
+    
+}
 
 
 
@@ -247,16 +286,6 @@ startButton.addEventListener("click", startCount);
                     
                     
                     
-                    // class Tamagotchipet{
-                    //     constructor(name, hunger, tired, bored, age){
-                    //         this.name = name;
-                    //         this.hunger = hunger;
-                    //         this.tired = tired;
-                    //         this.bored = bored;
-                    //         this.age = age;
-                    //     }
-                        
-                    // }
 
 
 
