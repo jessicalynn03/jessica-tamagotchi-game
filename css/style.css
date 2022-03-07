@@ -1,5 +1,6 @@
 h1 {
     text-align: center;
+<<<<<<< HEAD
     border: 3px solid maroon;
     margin: 50px;
     padding: 25px;
@@ -7,6 +8,29 @@ h1 {
     color: purple;
     font-size: 40px;
 }
+=======
+}
+
+p {
+    text-align: justify;
+}
+footer {
+    text-align: center;
+}
+
+p {
+    border: 5px solid maroon; 
+}
+
+p {
+    text-align: justify;
+    border: 1px solid maroon; 
+}
+footer {
+    text-align: center;
+}
+
+>>>>>>> gh-pages
 h2 {
     font-family: 'Amatic SC', cursive;
     font-family: 'Staatliches', cursive;
@@ -15,6 +39,7 @@ footer {
     text-align: center;
 }
 
+<<<<<<< HEAD
 
 p {
     text-align: justify;
@@ -60,3 +85,9 @@ input {
 #countdown {
     font-size: 30px;
 }
+=======
+body {
+    text-align: center;
+} 
+
+>>>>>>> gh-pages

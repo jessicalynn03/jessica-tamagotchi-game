@@ -8,8 +8,11 @@ const restartButton = document.querySelector("#restart")
 const pauseButton = document.querySelector("#pause")
 const yourName = document.querySelector("#yourName")
 const ageEl = document.querySelector(".age")
+<<<<<<< HEAD
 const petAlive = document.querySelector("#petAlive")
 
+=======
+>>>>>>> gh-pages
 const feedBtn = document.querySelector("#feed")
 const playBtn = document.querySelector("#play")
 const sleepBtn = document.querySelector("#sleep")
@@ -55,6 +58,47 @@ const subSleep = () => {
     gameOver();
 };
 
+<<<<<<< HEAD
+=======
+let hungerInterval = setInterval(function(){
+    hungerNow++
+    hungerEl.innerText = "Hungry: " + hungerNow;
+}, 2000)
+
+let playInterval = setInterval(function(){
+    playNow++ 
+    boredEl.innerText = "Bored: " + playNow;
+}, 3000)
+let sleepInterval = setInterval(function(){
+    sleepNow++
+    tiredEl.innerText = "Tired: " + sleepNow;
+}, 4000)
+
+
+let ageInterval = setInterval(function(){
+age++
+ageEl.innerText = "Age: " + age;
+}, 20000)
+
+
+// let stopInterval = clearInterval(function(){
+//     if(hungerNow === 10 || playNow === 10 || sleepNow === 10)
+//     clearInterval(hungerInterval);
+//     clearInterval(playInterval);
+//     clearInterval(sleepInterval);
+// } 
+
+
+
+       
+
+
+
+
+
+
+// startButton.addEventListener("click", decreaseTime)
+>>>>>>> gh-pages
 feedBtn.addEventListener("click", subFood);
 playBtn.addEventListener("click", subPlay);
 sleepBtn.addEventListener("click", subSleep);
