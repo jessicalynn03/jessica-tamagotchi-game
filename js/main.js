@@ -89,38 +89,38 @@ function updateCountdown(){
 setInterval(updateCountdown, 1000)
 
 
-const startCount = () =>{
-    sleepCount();
-    ageCount();
-    playCount();
-    hungerCount();
-}
+// const startCount = () =>{
+//     sleepCount();
+//     ageCount();
+//     playCount();
+//     hungerCount();
+// }
 
-// const removePng = () =>{
-//     const imageEl = document.querySelector("myImage");
-//     imageEl.remove();
-// };
+const removePng = () =>{
+    const imageEl = document.querySelector("myImage");
+    imageEl.remove();
+};
 
-// const addFeedPng = () =>{
-//     removePng();
-//     let feedPng = document.createElement("img");
-//     feedPng.setAttribute("src", "feed.png");
-//     document.querySelector("#myImage").append(feedPng);
-// };
+const addFeedPng = () =>{
+    removePng();
+    let feedPng = document.createElement("img");
+    feedPng.setAttribute("src", "feed.png");
+    document.querySelector("#myImage").append(feedPng);
+};
 
-// const addPlayPng = () =>{
-//     removePng();
-//     let playPng = document.createElement("img");
-//     playPng.setAttribute("src", "cat.png");
-//     document.querySelector("myImage").append(playPng);
-// };
+const addPlayPng = () =>{
+    removePng();
+    let playPng = document.createElement("img");
+    playPng.setAttribute("src", "cat.png");
+    document.querySelector("myImage").append(playPng);
+};
 
-// const addSleepPng = () =>{
-//     removePng();
-//     let sleepPng = document.createElement("img");
-//     sleepPng.setAttribute("src", "sleepcat.gif");
-//     document.querySelector("myImage").append(sleepPng);
-// };
+const addSleepPng = () =>{
+    removePng();
+    let sleepPng = document.createElement("img");
+    sleepPng.setAttribute("src", "sleepcat.gif");
+    document.querySelector("myImage").append(sleepPng);
+};
 
 
 
