@@ -14,11 +14,11 @@ const playBtn = document.querySelector("#play")
 const sleepBtn = document.querySelector("#sleep")
 
 
-let startingMinutes = 5;
-let time = startingMinutes * 60;
-const minutes = Math.floor(time / 60);
-const seconds = time % 60;
-let name = ""
+// let startingMinutes = 5;
+// let time = startingMinutes * 60;
+// const minutes = Math.floor(time / 60);
+// const seconds = time % 60;
+// let name = ""
 
 let hungerNow = 0;
 let playNow = 0;
@@ -31,7 +31,7 @@ const subFood = () => {
         hungerNow--;
         hungerEl.innerText = "Hungry: " + hungerNow;
     }
-    
+    gameOver();
 };
 
 const subPlay = () => {
@@ -39,7 +39,7 @@ const subPlay = () => {
         playNow--
         boredEl.innerText = "Bored: " + playNow; 
     }
-    
+    gameOver();
 };
 
 const subSleep = () => {
@@ -47,45 +47,62 @@ const subSleep = () => {
         sleepNow--
         tiredEl.innerText = "Tired: " + sleepNow;
     }
-    
+    gameOver();
 };
 
+feedBtn.addEventListener("click", subFood);
+playBtn.addEventListener("click", subPlay);
+sleepBtn.addEventListener("click", subSleep);
+
+let ageInterval = null;
+let hungerInterval = null;
+let playInterval = null;
+let sleepInterval = null;
+
 const ageCount = () =>{
-    let ageInterval = setInterval(function(){
-        age++
-        ageEl.innerText = "Age: " + age;
+    ageInterval = setInterval(function(){
+        if(age < 10) {
+            age++
+            ageEl.innerText = "Age: " + age;
+        }
         }, 20000)
 }
 
 const hungerCount = () =>{
-    let hungerInterval = setInterval(function(){
-        hungerNow++
-        hungerEl.innerText = "Hungry: " + hungerNow;
+    hungerInterval = setInterval(function(){
+        if(hungerNow < 10) {
+            hungerNow++
+            hungerEl.innerText = "Hungry: " + hungerNow;
+        }
     }, 2000)
 }
 
 const playCount = () =>{
-    let playInterval = setInterval(function(){
-    playNow++ 
-    boredEl.innerText = "Bored: " + playNow;
+    playInterval = setInterval(function(){
+        if(playNow < 10) {
+            playNow++ 
+            boredEl.innerText = "Bored: " + playNow;
+        }
 }, 3000)
 }
 
 const sleepCount = () =>{
-    let sleepInterval = setInterval(function(){
-        sleepNow++
-        tiredEl.innerText = "Tired: " + sleepNow;
+    sleepInterval = setInterval(function(){
+        if(sleepNow < 10) {
+            sleepNow++
+            tiredEl.innerText = "Tired: " + sleepNow;
+        }
     }, 4000)
     
 }
-function updateCountdown(){
-    const minutes = Math.floor(time / 60);
-    let seconds = time % 60;
-    // seconds = seconds < 5 ? "0" * seconds : seconds;
-    countdownEl.innerText = `${minutes}: ${seconds}`;
-    time--;
-}
-setInterval(updateCountdown, 1000)
+// function updateCountdown(){
+//     const minutes = Math.floor(time / 60);
+//     let seconds = time % 60;
+//     // seconds = seconds < 5 ? "0" * seconds : seconds;
+//     countdownEl.innerText = `${minutes}: ${seconds}`;
+//     time--;
+// }
+// setInterval(updateCountdown, 1000)
 
 
 
@@ -95,6 +112,9 @@ const startCount = () =>{
     ageCount();
     playCount();
     hungerCount();
+    feedBtn.addEventListener("click", subFood);
+    playBtn.addEventListener("click", subPlay);
+    sleepBtn.addEventListener("click", subSleep);
 }
 
 const removePng = () =>{
@@ -125,27 +145,51 @@ const addSleepPng = () =>{
 };
 
 
-const stopCount = () =>{
-    
+
+const gameOver = () => {
+    if(hungerNow >= 10) {
+        clearInterval(hungerInterval);
+        clearInterval(playInterval);
+        clearInterval(sleepInterval);
+        clearInterval(ageInterval);
+        feedBtn.removeEventListener("click", subFood);
+        playBtn.removeEventListener("click", subPlay);
+        sleepBtn.removeEventListener("click", subSleep);
+    } else if(playNow >= 10) {
+        clearInterval(hungerInterval);
+        clearInterval(playInterval);
+        clearInterval(sleepInterval);
+        clearInterval(ageInterval);
+        feedBtn.removeEventListener("click", subFood);
+        playBtn.removeEventListener("click", subPlay);
+        sleepBtn.removeEventListener("click", subSleep);
+    } else if(sleepNow >= 10) {
+        clearInterval(hungerInterval);
+        clearInterval(playInterval);
+        clearInterval(sleepInterval);
+        clearInterval(ageInterval);
+        feedBtn.removeEventListener("click", subFood);
+        playBtn.removeEventListener("click", subPlay);
+        sleepBtn.removeEventListener("click", subSleep);
+    }
 }
 
+// if(hungerNow >= 10 || playNow >= 10 || sleepNow >= 10) {
+//     clearInterval(hungerInterval);
+//     clearInterval(playInterval);
+//     clearInterval(sleepInterval);
+//     clearInterval(ageInterval);
+//     feedBtn.removeEventListener("click", subFood);
+//     playBtn.removeEventListener("click", subPlay);
+//     sleepBtn.removeEventListener("click", subSleep);
+// }
 
 
 
-
-pauseButton.addEventListener("click", stopCount)
+// pauseButton.addEventListener("click", stopCount)
 
 startButton.addEventListener("click", startCount);
        
-
-
-
-
-
-
-feedBtn.addEventListener("click", subFood);
-playBtn.addEventListener("click", subPlay);
-sleepBtn.addEventListener("click", subSleep);
 
 
 
