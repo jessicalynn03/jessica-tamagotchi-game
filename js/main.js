@@ -8,8 +8,6 @@ const restartButton = document.querySelector("#restart")
 const pauseButton = document.querySelector("#pause")
 const yourName = document.querySelector("#yourName")
 const ageEl = document.querySelector(".age")
-const imageEl = document.querySelector("myImage")
-
 
 const feedBtn = document.querySelector("#feed")
 const playBtn = document.querySelector("#play")
@@ -83,11 +81,12 @@ const sleepCount = () =>{
 function updateCountdown(){
     const minutes = Math.floor(time / 60);
     let seconds = time % 60;
-    seconds = seconds < 5 ? "0" * seconds : seconds;
+    // seconds = seconds < 5 ? "0" * seconds : seconds;
     countdownEl.innerText = `${minutes}: ${seconds}`;
     time--;
 }
 setInterval(updateCountdown, 1000)
+
 
 
 
@@ -126,32 +125,15 @@ const addSleepPng = () =>{
 };
 
 
+const stopCount = () =>{
+    
+}
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+pauseButton.addEventListener("click", stopCount)
 
 startButton.addEventListener("click", startCount);
        
@@ -175,43 +157,49 @@ sleepBtn.addEventListener("click", subSleep);
 
 
 
-// class Tamagotchipet{
-//     constructor(name, hunger, tired, bored, age){
-//         this.name = name;
-//         this.hunger = hunger;
-//         this.tired = tired;
-//         this.bored = bored;
-//         this.age = age;
-//     }
-    
-// }
-    
-    
-    
-    
-    
-    //         feedBtn(){
-    
-    //         }
-    // }
-    //         playBtn(){
-    
-    //         }
-    
-    //         sleepBtn(){
-    
-    //         }
-    //     }
 
 
 
 
 
 
-// class Tamagotchipet extends Data{
-//     constructor(){
-//         this.feed = feed;
-//         this.play = play;
-//         this.sleep = sleep;
-//     }
-// }
+
+
+
+
+
+
+
+
+
+
+
+            
+            
+            
+            
+            
+            
+            // class Tamagotchipet extends Data{
+                //     constructor(){
+                    //         this.feed = feed;
+                    //         this.play = play;
+                    //         this.sleep = sleep;
+                    //     }
+                    // }
+                    
+                    
+                    
+                    // class Tamagotchipet{
+                    //     constructor(name, hunger, tired, bored, age){
+                    //         this.name = name;
+                    //         this.hunger = hunger;
+                    //         this.tired = tired;
+                    //         this.bored = bored;
+                    //         this.age = age;
+                    //     }
+                        
+                    // }
+
+
+
