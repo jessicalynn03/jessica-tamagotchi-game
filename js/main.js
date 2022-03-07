@@ -10,6 +10,7 @@ const yourName = document.querySelector("#yourName")
 const ageEl = document.querySelector(".age")
 const imageEl = document.querySelector("myImage")
 
+
 const feedBtn = document.querySelector("#feed")
 const playBtn = document.querySelector("#play")
 const sleepBtn = document.querySelector("#sleep")
@@ -89,37 +90,39 @@ function updateCountdown(){
 setInterval(updateCountdown, 1000)
 
 
-// const startCount = () =>{
-//     sleepCount();
-//     ageCount();
-//     playCount();
-//     hungerCount();
-// }
+
+const startCount = () =>{
+    sleepCount();
+    ageCount();
+    playCount();
+    hungerCount();
+}
 
 const removePng = () =>{
-    const imageEl = document.querySelector("myImage");
-    imageEl.remove();
+    const imageEl = document.querySelector("#myImage");
+    const gameClass = document.querySelector(".game")
+    imageEl.removeChild("#myImage");
 };
 
 const addFeedPng = () =>{
     removePng();
     let feedPng = document.createElement("img");
     feedPng.setAttribute("src", "feed.png");
-    document.querySelector("#myImage").append(feedPng);
+    document.querySelector("#myImage").appendChild(feedPng);
 };
 
 const addPlayPng = () =>{
     removePng();
     let playPng = document.createElement("img");
     playPng.setAttribute("src", "cat.png");
-    document.querySelector("myImage").append(playPng);
+    document.querySelector("myImage").appendChild(playPng);
 };
 
 const addSleepPng = () =>{
     removePng();
     let sleepPng = document.createElement("img");
     sleepPng.setAttribute("src", "sleepcat.gif");
-    document.querySelector("myImage").append(sleepPng);
+    document.querySelector("myImage").appendChild;(sleepPng);
 };
 
 
