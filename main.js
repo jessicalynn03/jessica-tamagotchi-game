@@ -162,7 +162,7 @@ const startCount = () =>{
 // };
 
 
-// The game ends when when the value of each variable reaches 10. 
+// The game ends when when the value of each stat reaches 10. 
 
 let petDieMsg = document.getElementById("pet-die-msg")
 
