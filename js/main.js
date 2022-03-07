@@ -8,6 +8,7 @@ const restartButton = document.querySelector("#restart")
 const pauseButton = document.querySelector("#pause")
 const yourName = document.querySelector("#yourName")
 const ageEl = document.querySelector(".age")
+const petAlive = document.querySelector("#petAlive")
 
 const feedBtn = document.querySelector("#feed")
 const playBtn = document.querySelector("#play")
@@ -65,6 +66,9 @@ const ageCount = () =>{
             age++
             ageEl.innerText = "Age: " + age;
         }
+        else if(age === 20){
+            petAlive.innerText = "Died from old Age."
+        }
         }, 20000)
 }
 
@@ -73,6 +77,9 @@ const hungerCount = () =>{
         if(hungerNow < 10) {
             hungerNow++
             hungerEl.innerText = "Hungry: " + hungerNow;
+        }
+        else if(hungerNow === 10){
+            petAlive.innerText = "I died from overeating.";
         }
     }, 2000)
 }
@@ -83,6 +90,9 @@ const playCount = () =>{
             playNow++ 
             boredEl.innerText = "Bored: " + playNow;
         }
+        else if(playNow === 10){
+            petAlive.innerText = "I died from boredom.";
+        }
 }, 3000)
 }
 
@@ -91,6 +101,9 @@ const sleepCount = () =>{
         if(sleepNow < 10) {
             sleepNow++
             tiredEl.innerText = "Tired: " + sleepNow;
+        }
+        else if(sleepNow === 10){
+            petAlive.innerText = "I died from sleepiness.";
         }
     }, 4000)
     
@@ -117,35 +130,35 @@ const startCount = () =>{
     sleepBtn.addEventListener("click", subSleep);
 }
 
-const removePng = () =>{
-    const imageEl = document.querySelector("#myImage");
-    const gameClass = document.querySelector(".game")
-    imageEl.removeChild("#myImage");
-};
+// const removePng = () =>{
+//     const imageEl = document.querySelector("#myImage");
+//     const gameClass = document.querySelector(".game")
+//     imageEl.removeChild("#myImage");
+// };
 
-const addFeedPng = () =>{
-    removePng();
-    let feedPng = document.createElement("img");
-    feedPng.setAttribute("src", "feed.png");
-    document.querySelector("#myImage").appendChild(feedPng);
-};
+// const addFeedPng = () =>{
+//     removePng();
+//     let feedPng = document.createElement("img");
+//     feedPng.setAttribute("src", "feed.png");
+//     document.querySelector("#myImage").appendChild(feedPng);
+// };
 
-const addPlayPng = () =>{
-    removePng();
-    let playPng = document.createElement("img");
-    playPng.setAttribute("src", "cat.png");
-    document.querySelector("myImage").appendChild(playPng);
-};
+// const addPlayPng = () =>{
+//     removePng();
+//     let playPng = document.createElement("img");
+//     playPng.setAttribute("src", "cat.png");
+//     document.querySelector("myImage").appendChild(playPng);
+// };
 
-const addSleepPng = () =>{
-    removePng();
-    let sleepPng = document.createElement("img");
-    sleepPng.setAttribute("src", "sleepcat.gif");
-    document.querySelector("myImage").appendChild;(sleepPng);
-};
+// const addSleepPng = () =>{
+//     removePng();
+//     let sleepPng = document.createElement("img");
+//     sleepPng.setAttribute("src", "sleepcat.gif");
+//     document.querySelector("myImage").appendChild;(sleepPng);
+// };
 
 
-
+// The game ends when when the value of each variable reaches 10. 
 const gameOver = () => {
     if(hungerNow >= 10) {
         clearInterval(hungerInterval);

@@ -1,6 +1,6 @@
 h1 {
     text-align: center;
-    border: 2px solid maroon;
+    border: 3px solid maroon;
     margin: 50px;
     padding: 25px;
 }
@@ -28,12 +28,14 @@ footer {
 }
 body {
     text-align: center;
-    background-color: pink;
+    background-color: rgb(228, 128, 145);
 }
 
 .tama-game {
+    display: inline;
     list-style-type: none;
     font-size: 20px;
+    position: absolute;
 }
 .age {
     list-style-type: none;
